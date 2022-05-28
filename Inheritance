@@ -1,0 +1,44 @@
+
+class Animal{
+    String color;
+    int weight;
+
+    public void speak(){
+        System.out.println("Speaking");
+    }
+}
+// here dog inherit the property of animals dog use all property of animals = Single inheritance;
+class Dog extends Animal{
+    public void eat(){
+        System.out.println("Eating");
+    }
+
+}
+// it is a Multilevel inheritance it can use both dog and animals class.....
+class Fox extends Dog{
+    public void sleep(){
+        System.out.println("Sleeping");
+    }
+
+}
+
+// it is a heriarical inheritance there is only one main class and all are drived class...
+class Goat extends Animal{
+    public void speak(){
+
+    }
+}
+
+public class Inheritence {
+
+    public static void main(String[] args) {
+        Dog d1 = new Dog();
+        d1.speak();
+
+        // Multilevel inhertence it use both class....
+        Fox f1 = new Fox();
+        f1.speak();
+        f1.eat();
+
+    }
+}
