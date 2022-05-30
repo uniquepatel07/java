@@ -1,0 +1,61 @@
+public class recursionQnA {
+
+    // 1. To print counting
+    public static void printCnt(int n){
+        if(n<1){
+            return;
+        }
+        printCnt(n-1);
+        System.out.println(n);
+
+    }
+
+    // 2. Factorial of any number
+
+    public static int fact(int n){
+        if(n==1){
+            return 1;
+        }
+        int factorial = n*fact(n-1);
+
+        return factorial;
+
+    }
+
+    // 3. fiboncci series to print nth term...
+    public static int fib(int n){
+        if(n==0){
+            return 0;
+        }
+        if(n==1){
+            return 1;
+        }
+        int fibonacci = fib(n-1) + fib(n-2);
+
+        return fibonacci;
+    }
+
+    // 4. Say digit one by one
+    public static void sayDigit(int n){
+        if(n==0){
+            return;
+        }
+        String[] arr = {"zero", "one", "two", "three","four", "five", "six", "seven", "eight","nine"};
+        int lastdigit = n%10;
+
+        n = n/10;
+        sayDigit((n));
+        System.out.print(arr[lastdigit] + " ");
+
+
+    }
+
+    public static void main(String[] args) {
+        printCnt(5);
+        System.out.println("factorial is " + fact(5));
+
+        System.out.println("fibonacci of this is " + fib(5));
+        sayDigit(421);
+
+    }
+}
