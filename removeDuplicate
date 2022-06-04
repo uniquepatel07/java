@@ -1,0 +1,31 @@
+public class revomeDuplicate {
+
+    public static boolean[] map = new boolean[26];
+
+    public static void deleteDuplicate(String str, int idx , String newstring){
+
+        if(idx == str.length()){
+            System.out.println(newstring);
+            return;
+        }
+
+        char current = str.charAt(idx);
+        if(map[current-'a']){
+            deleteDuplicate(str, idx+1, newstring);
+        }
+        else {
+            newstring+=current;
+            map[current -'a'] = true;
+            deleteDuplicate(str, idx+1, newstring);
+        }
+    }
+
+
+
+    public static void main(String[] args) {
+
+        String str = "abaccdaed";
+        deleteDuplicate(str,0, "");
+
+    }
+}
