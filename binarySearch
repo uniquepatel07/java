@@ -1,0 +1,36 @@
+class revision{
+
+    public static boolean binarySearch(int arr[], int s,int e, int key){
+
+        if(s>e){
+            return false;
+        }
+        int mid = (s+e) /2;
+        if(key == arr[mid]){
+            System.out.println("index is " + mid);
+            return true;
+        }
+        if(key>arr[mid]){
+            return  binarySearch(arr,mid, e, key);
+        }
+        else {
+            return binarySearch(arr, s, mid, key);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1,2,4,5,7};
+        int key = 4;
+
+       boolean ans =binarySearch(arr, 0, arr.length, key);
+
+       if(ans){
+           System.out.println("Target find");
+       }
+       else {
+           System.out.println("target not found");
+       }
+
+    }
+}
